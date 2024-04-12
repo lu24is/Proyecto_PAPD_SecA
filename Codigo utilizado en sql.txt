@@ -1,0 +1,83 @@
+Codigo utilizado en SQL
+
+-- Tabla airport
+DROP TABLE IF EXISTS `airports`;
+CREATE TABLE `airports` (
+  `faa` VARCHAR(10),
+  `name` VARCHAR(100),
+  `lat` REAL,
+  `lon` REAL,
+  `alt` INT,
+  `tz` INT,
+  `dst` VARCHAR(10),
+  `tzone` VARCHAR(100),
+  PRIMARY KEY (`faa`)
+ );
+ 
+-- Tabla planes
+DROP TABLE IF EXISTS `planes`;
+CREATE TABLE `planes` (
+  `tailnum` VARCHAR(50),
+  `year` VARCHAR(50),
+  `type` VARCHAR(100),
+  `manufacturer` VARCHAR(100),
+  `model` VARCHAR(100),
+  `engines` INT,
+  `seats` INT,
+  `speed` VARCHAR(100),
+  `engine` VARCHAR(100),
+  PRIMARY KEY (`tailnum`)
+);
+
+-- Tabla weather
+DROP TABLE IF EXISTS `weather`;
+CREATE TABLE `weather` (
+  `origin` VARCHAR(10),
+  `year` INT,
+  `month` INT,
+  `day` INT,
+  `hour` INT,
+  `temp` REAL,
+  `dewp` REAL,
+  `humid` REAL,
+  `wind_dir` INT,
+  `wind_speed` REAL,
+  `wind_gust` VARCHAR(10),
+  `precip` REAL,
+  `pressure` REAL,
+  `visib` REAL,
+  `time_hour` VARCHAR(50),
+  PRIMARY KEY (`origin`, `year`, `month`, `day`, `hour`)
+);
+
+-- Tabla airlines
+DROP TABLE IF EXISTS `airlines`;
+CREATE TABLE `airlines` (
+  `carrier` VARCHAR(10),
+  `name` VARCHAR(50),
+  PRIMARY KEY (`carrier`)
+); 
+
+-- Tabla flights
+DROP TABLE IF EXISTS `flights`;
+CREATE TABLE `flights` (
+  `year` INT,
+  `month` INT,
+  `day` INT,
+  `dep_time` VARCHAR(10),
+  `sched_dep_time` INT,
+  `dep_delay` VARCHAR(10),
+  `arr_time` VARCHAR(10),
+  `sched_arr_time` INT,
+  `arr_delay` VARCHAR(10),
+  `carrier` VARCHAR(10),
+  `flight` INT,
+  `tailnum` VARCHAR(50),
+  `origin` VARCHAR(10),
+  `dest` VARCHAR(10),
+  `air_time` VARCHAR(10),
+  `distance` INT,
+  `hour` INT,
+  `minute` INT,
+  `time_hour` VARCHAR(50)
+);
